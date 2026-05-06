@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artist Name | Minimal Portfolio</title>
+  <meta name="description" content="A minimal artist portfolio website for biography, portfolio, exhibitions, and individual artworks.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Artist Name</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="biography.html">Biography</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="exhibitions.html">Exhibitions</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="kicker">Contemporary artist portfolio</p>
+        <h1>Quiet work, slowly seen.</h1>
+        <p class="lede">A minimal archive of paintings, studies, and image-based works exploring memory, surface, and the atmosphere of ordinary rooms.</p>
+        <div class="button-row">
+          <a class="button" href="portfolio.html">View Portfolio</a>
+          <a class="button ghost" href="biography.html">Read Biography</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/images/full/veil-study.svg" alt="Abstract placeholder artwork titled Veil Study">
+        <figcaption>Featured artwork: <em>Veil Study</em>, 2026</figcaption>
+      </figure>
+    </section>
+    
+    <section class="section-heading reveal" aria-labelledby="intro-title">
+      <div>
+        <p class="kicker">Current focus</p>
+        <h2 id="intro-title">A sparse space for looking.</h2>
+      </div>
+      <p>The website keeps the artwork central: restrained typography, ample white space, direct page paths, and subtle motion that supports the viewing experience rather than distracting from it.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year">2026</span> Artist Name</span>
+    <span>Email: studio@example.com</span>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

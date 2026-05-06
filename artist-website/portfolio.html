@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Artist Name</title>
+  <meta name="description" content="Portfolio of selected artworks by Artist Name.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">Artist Name</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="biography.html">Biography</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="exhibitions.html">Exhibitions</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-heading">
+      <div>
+        <p class="kicker">Portfolio</p>
+        <h1>Selected works</h1>
+      </div>
+      <p>Each artwork links to its own page with image, title, year, medium, dimensions, and a short description.</p>
+    </section>
+
+    <section class="grid" aria-label="Artwork portfolio grid">
+      <a class="art-card" style="--i:0" href="artworks/veil-study.html">
+        <img src="assets/images/thumbnails/veil-study.svg" alt="Veil Study artwork thumbnail">
+        <span class="art-meta"><strong>Veil Study</strong><span>2026</span></span>
+      </a>
+      <a class="art-card" style="--i:1" href="artworks/silent-room.html">
+        <img src="assets/images/thumbnails/silent-room.svg" alt="Silent Room artwork thumbnail">
+        <span class="art-meta"><strong>Silent Room</strong><span>2025</span></span>
+      </a>
+      <a class="art-card" style="--i:2" href="artworks/blue-afterimage.html">
+        <img src="assets/images/thumbnails/blue-afterimage.svg" alt="Blue Afterimage artwork thumbnail">
+        <span class="art-meta"><strong>Blue Afterimage</strong><span>2025</span></span>
+      </a>
+      <a class="art-card" style="--i:3" href="artworks/garden-at-night.html">
+        <img src="assets/images/thumbnails/garden-at-night.svg" alt="Garden at Night artwork thumbnail">
+        <span class="art-meta"><strong>Garden at Night</strong><span>2024</span></span>
+      </a>
+      <a class="art-card" style="--i:4" href="artworks/paper-moon.html">
+        <img src="assets/images/thumbnails/paper-moon.svg" alt="Paper Moon artwork thumbnail">
+        <span class="art-meta"><strong>Paper Moon</strong><span>2024</span></span>
+      </a>
+      <a class="art-card" style="--i:5" href="artworks/threshold.html">
+        <img src="assets/images/thumbnails/threshold.svg" alt="Threshold artwork thumbnail">
+        <span class="art-meta"><strong>Threshold</strong><span>2023</span></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Artist Name</span>
+    <span>Email: studio@example.com</span>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

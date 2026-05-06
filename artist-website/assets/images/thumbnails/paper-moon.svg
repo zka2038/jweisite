@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+<title id="title">Paper Moon</title>
+<desc id="desc">Minimal placeholder artwork image for Paper Moon.</desc>
+<rect width="1200" height="1500" fill="#f2eee7"/>
+<circle cx="910" cy="320" r="210" fill="#8a8176" opacity="0.16"/>
+<path d="M180 1160 C360 830 410 430 665 600 C840 716 800 1010 1020 1230" fill="none" stroke="#8a8176" stroke-width="24" opacity="0.55"/>
+<path d="M210 310 L980 220 L850 1180 L280 1280 Z" fill="none" stroke="#8a8176" stroke-width="3" opacity="0.32"/>
+<text x="80" y="1390" font-family="Times New Roman, Times, serif" font-size="62" fill="#8a8176" opacity="0.85">Paper Moon</text>
+<text x="80" y="1460" font-family="Times New Roman, Times, serif" font-size="32" fill="#8a8176" opacity="0.6">2024</text>
+</svg>
