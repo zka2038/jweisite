@@ -158,7 +158,7 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   margin-top: 0;
   margin-left: calc(50% - 50vw);
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 6;
   overflow: hidden;
   box-shadow: var(--shadow);
   animation: floatIn 1100ms cubic-bezier(.2,.8,.2,1) both;
