@@ -95,14 +95,17 @@ a { color: inherit; text-decoration: none; }
 
 main {
   padding: clamp(2.5rem, 7vw, 7rem) clamp(1rem, 4vw, 3.5rem);
+  padding-top: 0;
 }
 
 .hero {
-  min-height: calc(100vh - 96px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 1.1fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: center;
+  margin-top: 0;
+  padding-top: 0;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
 }
 
 .kicker {
@@ -151,8 +154,11 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 .button.ghost:hover { color: var(--paper); border-color: var(--ink); }
 
 .hero-art {
+  width: 100vw;
+  margin-top: 0;
+  margin-left: calc(50% - 50vw);
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   box-shadow: var(--shadow);
   animation: floatIn 1100ms cubic-bezier(.2,.8,.2,1) both;
@@ -169,6 +175,10 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   backdrop-filter: blur(12px);
   border: 1px solid rgba(221, 215, 206, 0.8);
   color: var(--muted);
+}
+.hero > div {
+  padding: 3rem 2em 4rem;
+  max-width: 900px;
 }
 
 .section-heading {
