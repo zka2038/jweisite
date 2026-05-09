@@ -169,7 +169,7 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   margin-top: 0;
   margin-left: calc(50% - 50vw);
   position: relative;
-  aspect-ratio: 16 / 6;
+  aspect-ratio: 16 / 7;
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -179,12 +179,16 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   position: absolute;
   left: 1rem;
   right: 1rem;
-  bottom: 1rem;
+  bottom: 0.08rem;
   padding: 0.8rem 1rem;
-  background: var(--veil);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(221, 215, 206, 0.8);
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.00rem;
+  letter-spacing: 0.18em;
+  text-transform: none;
+  line-height: 1.9;
+  word-spacing: 0.03em;
+
 }
 .hero > div {
   padding: 3rem 2em 4rem;
