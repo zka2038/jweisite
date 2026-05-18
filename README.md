@@ -12,7 +12,7 @@ A minimal static artist portfolio website for GitHub Pages.
 
 ## Replace placeholders
 
-1. Replace `Artist Name` across the HTML files.
+1. Artist names in the HTML files are set to `Joyce (Ruozhou) Wei`.
 2. Replace `studio@example.com` with your real contact email.
 3. Replace SVG placeholder images in `assets/images/full` and `assets/images/thumbnails` with optimized artwork images.
 4. Update artwork titles, years, mediums, dimensions, and descriptions.
