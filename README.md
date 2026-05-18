@@ -9,6 +9,7 @@ A minimal static artist portfolio website for GitHub Pages.
 - `portfolio.html` - artwork grid
 - `exhibitions.html` - exhibitions page
 - `artworks/*.html` - individual artwork pages
+- `writings.html` - writings
 
 ## Replace placeholders
 
