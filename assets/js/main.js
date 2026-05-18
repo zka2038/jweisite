@@ -91,6 +91,114 @@ if (carousel) {
   setInterval(nextSlide, 5000);
 }
 
+document.querySelectorAll(".artwork-gallery").forEach((gallery) => {
+  const slides = gallery.querySelectorAll(".gallery-slide");
+  const counter = gallery.querySelector(".gallery-counter");
+  const prevButton = gallery.querySelector(".gallery-btn.prev");
+  const nextButton = gallery.querySelector(".gallery-btn.next");
+  const swipeSurface = gallery.querySelector(".gallery-stage") || gallery;
+
+  if (slides.length < 2 || !counter || !prevButton || !nextButton) {
+    return;
+  }
+
+  let currentSlide = Array.from(slides).findIndex((slide) => slide.classList.contains("active"));
+  let pointerStartX = 0;
+  let pointerStartY = 0;
+  let isPointerDown = false;
+  let lastWheelSlideTime = 0;
+
+  if (currentSlide < 0) {
+    currentSlide = 0;
+    slides[currentSlide].classList.add("active");
+  }
+  
+
+  function showGallerySlide(index) {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
+    counter.textContent = `${currentSlide + 1}/${slides.length}`;
+  }
+
+  function showNextGallerySlide() {
+    showGallerySlide(currentSlide + 1);
+  }
+
+  function showPreviousGallerySlide() {
+    showGallerySlide(currentSlide - 1);
+  }
+
+  function handleSwipe(deltaX, deltaY) {
+    if (Math.abs(deltaX) < 45 || Math.abs(deltaY) > Math.abs(deltaX) * 0.75) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      showNextGallerySlide();
+    } else {
+      showPreviousGallerySlide();
+    }
+  }
+
+  prevButton.addEventListener("click", showPreviousGallerySlide);
+  nextButton.addEventListener("click", showNextGallerySlide);
+
+  swipeSurface.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    isPointerDown = true;
+    pointerStartX = event.clientX;
+    pointerStartY = event.clientY;
+
+    if (swipeSurface.setPointerCapture) {
+      swipeSurface.setPointerCapture(event.pointerId);
+    }
+  });
+
+  swipeSurface.addEventListener("pointerup", (event) => {
+    if (!isPointerDown) {
+      return;
+    }
+
+    isPointerDown = false;
+    handleSwipe(event.clientX - pointerStartX, event.clientY - pointerStartY);
+
+    if (swipeSurface.hasPointerCapture && swipeSurface.hasPointerCapture(event.pointerId)) {
+      swipeSurface.releasePointerCapture(event.pointerId);
+    }
+  });
+
+  swipeSurface.addEventListener("pointercancel", () => {
+    isPointerDown = false;
+  });
+
+  swipeSurface.addEventListener("wheel", (event) => {
+    const horizontalSwipe = Math.abs(event.deltaX) > Math.abs(event.deltaY) * 1.5;
+
+    if (!horizontalSwipe || Math.abs(event.deltaX) < 24) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const now = Date.now();
+    if (now - lastWheelSlideTime < 650) {
+      return;
+    }
+
+    lastWheelSlideTime = now;
+
+    if (event.deltaX > 0) {
+      showNextGallerySlide();
+    } else {
+      showPreviousGallerySlide();
+    }
+  }, { passive: false });
+});
+
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');

@@ -16,13 +16,23 @@
       <a href="../biography.html">Biography</a>
       <a href="../portfolio.html" aria-current="page">Portfolio</a>
       <a href="../exhibitions.html">Exhibitions</a>
-      <a href="writings.html">Writings</a>
+      <a href="../writings.html">Writings</a>
     </nav>
   </header>
 
- <main class=""text-page" style="padding-top: 3rem;">
+  <main class="text-page" style="padding-top: 3rem;">
     <article class="artwork-layout">
-      <img src="../assets/images/full/Wardrobenotext.jpg" alt="Wardrobe Piece artwork full image">
+      <div class="artwork-gallery">
+        <div class="gallery-stage">
+          <button class="gallery-btn prev" type="button" aria-label="Previous image">&lsaquo;</button>
+          <div class="gallery-frame">
+            <img class="gallery-slide active" src="../assets/images/full/Wardrobedetailnotext.jpg" alt="Wardrobe Piece artwork">
+            <img class="gallery-slide" src="../assets/images/thumbnails/wardrobethumbnail.jpg" alt="Wardrobe Piece artwork detail">
+          </div>
+          <button class="gallery-btn next" type="button" aria-label="Next image">&rsaquo;</button>
+        </div>
+        <div class="gallery-counter" aria-live="polite">1/2</div>
+      </div>
       <div class="artwork-copy reveal">
         <p class="kicker">Artwork</p>
         <h1>Wardrobe Piece</h1>

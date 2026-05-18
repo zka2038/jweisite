@@ -217,6 +217,13 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   pointer-events: auto;
 }
 
+.carousel-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
 .hero-art img {
   width: 100%;
   height: 100%;
@@ -228,7 +235,7 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   position: absolute;
   left: 1rem;
   right: 1rem;
-  bottom: 0.08rem;
+  bottom: 0.05rem;
   padding: 0.8rem 1rem;
   color: rgba(124, 124, 124, 0.55);
   font-family: "Times New Roman", Times, serif;
@@ -373,7 +380,6 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border: 1px solid var(--line);
   transition: transform 600ms ease, filter 600ms ease;
 }
 .art-card:hover img { transform: scale(0.985); filter: grayscale(0.25); }
@@ -430,7 +436,7 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   gap: clamp(2rem, 6vw, 6rem);
   align-items: start;
 }
-.artwork-layout img { border: 1px solid var(--line); box-shadow: var(--shadow); }
+.artwork-layout img { box-shadow: none; }
 .artwork-details { margin: 1.3rem 0; padding: 0; list-style: none; color: var(--muted); border-top: 1px solid var(--line); }
 .artwork-details li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
 
@@ -438,48 +444,49 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 .artwork-gallery {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.65rem;
 }
 
-.gallery-track {
-  position: relative;
+.gallery-stage {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr) 2.4rem;
+  gap: 0.7rem;
+  align-items: center;
+  touch-action: pan-y;
+}
+
+.gallery-frame {
+  min-width: 0;
 }
 
 .gallery-slide {
   display: none;
   width: 100%;
   height: auto;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  border: none;
+  box-shadow: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .gallery-slide.active {
   display: block;
 }
 
-.gallery-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid var(--line);
-  border-top: none;
-  padding: 0.55rem 1rem;
-}
-
 .gallery-btn {
   background: none;
   border: none;
-  padding: 0.2rem 0.4rem;
+  padding: 0;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.2rem;
-  color: var(--muted);
-  transition: color 220ms ease, transform 220ms ease;
+  font-size: 1.8rem;
+  color: rgba(66, 66, 66, 0.6);
+  transition: opacity 220ms ease, transform 220ms ease;
   line-height: 1;
 }
 
 .gallery-btn:hover {
-  color: var(--ink);
+  opacity: 0.5;
   transform: translateX(-2px);
 }
 
@@ -489,10 +496,10 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 
 .gallery-counter {
   font-family: "Times New Roman", Times, serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: rgba(66, 66, 66, 0.6);
+  text-align: center;
 }
 
 .site-footer {
@@ -549,9 +556,14 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   main { padding-top: 2rem; }
   h1 { font-size: 4rem; }
   .grid { grid-template-columns: 1fr; }
+  .gallery-stage {
+    grid-template-columns: 1.6rem minmax(0, 1fr) 1.6rem;
+    gap: 0.45rem;
+  }
+  .gallery-btn { font-size: 1.45rem; }
   .exhibition-item { grid-template-columns: 1fr; gap: 0.4rem; }
   .site-footer { display: block; }
-    .hero-art {
+  .hero-art {
     aspect-ratio: 4 / 5;
   }
 
