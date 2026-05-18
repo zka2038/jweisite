@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Veil Study detail</title>
+  <desc id="desc">A close abstract detail placeholder for Veil Study.</desc>
+  <rect width="1200" height="900" fill="#fbf9f5"/>
+  <path d="M180 0c145 165 220 342 225 532 4 138-31 261-105 368" fill="none" stroke="#d6cec3" stroke-width="62" stroke-linecap="round"/>
+  <path d="M510-18c92 143 145 304 159 483 15 183-16 331-92 445" fill="none" stroke="#c8c0b6" stroke-width="22" stroke-linecap="round" opacity=".82"/>
+  <path d="M775-10c82 132 123 280 123 444 0 185-47 338-140 458" fill="none" stroke="#e3ddd5" stroke-width="54" stroke-linecap="round" opacity=".9"/>
+  <path d="M248 628c250-46 495-30 735 48" fill="none" stroke="#b8afa4" stroke-width="3" opacity=".45"/>
+  <path d="M312 322c200 28 382 8 546-60" fill="none" stroke="#b8afa4" stroke-width="2" opacity=".38"/>
+</svg>

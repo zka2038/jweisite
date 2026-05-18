@@ -6,57 +6,6 @@
   <title>Pick-Me-Up | Joyce (Ruozhou) Wei</title>
   <meta name="description" content="Pick-Me-Up, 2026, artwork by Joyce (Ruozhou) Wei.">
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <style>
-    .artwork-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .gallery-track {
-      position: relative;
-    }
-    .gallery-slide {
-      display: none;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-    .gallery-slide.active {
-      display: block;
-    }
-    .gallery-controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-    }
-    .gallery-btn {
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 1.5rem;
-      color: var(--muted);
-      line-height: 1;
-      transition: color 260ms ease, transform 260ms ease;
-    }
-    .gallery-btn.prev:hover {
-      color: var(--ink);
-      transform: translateX(-2px);
-    }
-    .gallery-btn.next:hover {
-      color: var(--ink);
-      transform: translateX(2px);
-    }
-    .gallery-counter {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -74,15 +23,15 @@
   <main class="text-page" style="padding-top: 3rem;">
     <article class="artwork-layout">
       <div class="artwork-gallery">
-        <div class="gallery-track">
-          <img class="gallery-slide active" src="../assets/images/full/Pick-Me-Upnotext.jpg" alt="Pick-Me-Up artwork">
-          <img class="gallery-slide" src="../assets/images/full/detailsofpick-me-upnotext.jpg" alt="Pick-Me-Up artwork detail">
+        <div class="gallery-stage">
+          <button class="gallery-btn prev" type="button" aria-label="Previous image">&lsaquo;</button>
+          <div class="gallery-frame">
+            <img class="gallery-slide active" src="../assets/images/full/Pick-Me-Upnotext.jpg" alt="Pick-Me-Up artwork">
+            <img class="gallery-slide" src="../assets/images/full/detailsofpick-me-upnotext.jpg" alt="Pick-Me-Up artwork detail">
+          </div>
+          <button class="gallery-btn next" type="button" aria-label="Next image">&rsaquo;</button>
         </div>
-        <div class="gallery-controls">
-          <button class="gallery-btn prev" aria-label="Previous image">&lsaquo;</button>
-          <span class="gallery-counter">1 / 2</span>
-          <button class="gallery-btn next" aria-label="Next image">&rsaquo;</button>
-        </div>
+        <div class="gallery-counter" aria-live="polite">1/2</div>
       </div>
 
       <div class="artwork-copy reveal">
@@ -113,22 +62,5 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
-  <script>
-    (function () {
-      const slides = document.querySelectorAll('.gallery-slide');
-      const counter = document.querySelector('.gallery-counter');
-      let current = 0;
-
-      function goTo(index) {
-        slides[current].classList.remove('active');
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        counter.textContent = (current + 1) + ' / ' + slides.length;
-      }
-
-      document.querySelector('.gallery-btn.prev').addEventListener('click', () => goTo(current - 1));
-      document.querySelector('.gallery-btn.next').addEventListener('click', () => goTo(current + 1));
-    })();
-  </script>
 </body>
 </html>
