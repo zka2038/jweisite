@@ -68,7 +68,7 @@ if (carousel) {
     event.preventDefault();
 
     const now = Date.now();
-    if (now - lastWheelSlideTime < 650) {
+    if (now - lastWheelSlideTime < 500) {
       return;
     }
 
@@ -106,6 +106,7 @@ document.querySelectorAll(".artwork-gallery").forEach((gallery) => {
   let pointerStartX = 0;
   let pointerStartY = 0;
   let isPointerDown = false;
+  let activePointerId = null;
   let lastWheelSlideTime = 0;
 
   if (currentSlide < 0) {
@@ -141,15 +142,34 @@ document.querySelectorAll(".artwork-gallery").forEach((gallery) => {
     }
   }
 
-  prevButton.addEventListener("click", showPreviousGallerySlide);
-  nextButton.addEventListener("click", showNextGallerySlide);
+  gallery.addEventListener("click", (event) => {
+    const button = event.target.closest(".gallery-btn");
+
+    if (!button || !gallery.contains(button)) {
+      return;
+    }
+
+    if (button.classList.contains("prev")) {
+      showPreviousGallerySlide();
+      return;
+    }
+
+    if (button.classList.contains("next")) {
+      showNextGallerySlide();
+    }
+  });
 
   swipeSurface.addEventListener("pointerdown", (event) => {
     if (event.pointerType === "mouse" && event.button !== 0) {
       return;
     }
 
+    if (event.target.closest(".gallery-btn")) {
+      return;
+    }
+
     isPointerDown = true;
+    activePointerId = event.pointerId;
     pointerStartX = event.clientX;
     pointerStartY = event.clientY;
 
@@ -159,11 +179,12 @@ document.querySelectorAll(".artwork-gallery").forEach((gallery) => {
   });
 
   swipeSurface.addEventListener("pointerup", (event) => {
-    if (!isPointerDown) {
+    if (!isPointerDown || event.pointerId !== activePointerId) {
       return;
     }
 
     isPointerDown = false;
+    activePointerId = null;
     handleSwipe(event.clientX - pointerStartX, event.clientY - pointerStartY);
 
     if (swipeSurface.hasPointerCapture && swipeSurface.hasPointerCapture(event.pointerId)) {
@@ -171,8 +192,13 @@ document.querySelectorAll(".artwork-gallery").forEach((gallery) => {
     }
   });
 
-  swipeSurface.addEventListener("pointercancel", () => {
+  swipeSurface.addEventListener("pointercancel", (event) => {
+    if (swipeSurface.hasPointerCapture && swipeSurface.hasPointerCapture(event.pointerId)) {
+      swipeSurface.releasePointerCapture(event.pointerId);
+    }
+
     isPointerDown = false;
+    activePointerId = null;
   });
 
   swipeSurface.addEventListener("wheel", (event) => {
