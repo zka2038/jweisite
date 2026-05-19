@@ -448,6 +448,7 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 }
 
 .gallery-stage {
+  position: relative;
   display: grid;
   grid-template-columns: 2.4rem minmax(0, 1fr) 2.4rem;
   gap: 0.7rem;
@@ -474,10 +475,13 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 }
 
 .gallery-btn {
+  position: relative;
+  z-index: 2;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
+  pointer-events: auto;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.8rem;
   color: rgba(66, 66, 66, 0.6);
