@@ -437,10 +437,18 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   align-items: start;
 }
 .artwork-layout img { box-shadow: none; }
+.artwork-copy h1 {
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  line-height: 1.02;
+}
 .artwork-details { margin: 1.3rem 0; padding: 0; list-style: none; color: var(--muted); border-top: 1px solid var(--line); }
 .artwork-details li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
 
-/* Artwork image gallery */
+
+.artwork-details a {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}/* Artwork image gallery */
 .artwork-gallery {
   display: flex;
   flex-direction: column;
@@ -456,6 +464,10 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   touch-action: pan-y;
 }
 
+.video-gallery .gallery-stage {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .gallery-frame {
   min-width: 0;
 }
@@ -468,6 +480,21 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   box-shadow: none;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.gallery-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  object-fit: cover;
+}
+
+.video-gallery .gallery-frame {
+  width: 100%;
 }
 
 .gallery-slide.active {
@@ -545,6 +572,29 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
     margin: 0 auto;
     object-fit: contain;
   }
+
+  .gallery-media {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .video-gallery {
+    height: auto;
+    align-self: start;
+  }
+
+  .video-gallery .gallery-stage {
+    flex: none;
+    align-items: start;
+  }
+
+  .video-gallery .gallery-frame {
+    min-height: 0;
+    height: auto;
+    display: block;
+    margin-top: clamp(0.4rem, 1vw, 0.85rem);
+  }
 }
 
 .site-footer {
@@ -605,6 +655,11 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
     grid-template-columns: 1.6rem minmax(0, 1fr) 1.6rem;
     gap: 0.45rem;
   }
+
+  .video-gallery .gallery-stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .gallery-btn { font-size: 1.45rem; }
   .exhibition-item { grid-template-columns: 1fr; gap: 0.4rem; }
   .site-footer { display: block; }
@@ -629,3 +684,4 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
     bottom: 3.7rem;
   }
 }
+
