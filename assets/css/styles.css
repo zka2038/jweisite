@@ -443,10 +443,6 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 }
 .artwork-details { margin: 1.3rem 0; padding: 0; list-style: none; color: var(--muted); border-top: 1px solid var(--line); }
 .artwork-details li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
-.artwork-details a {
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
-}
 
 /* Artwork image gallery */
 .artwork-gallery {
@@ -684,6 +680,4 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
     bottom: 3.7rem;
   }
 }
-.oyster-page .video-link {
-  text-decoration: underline;
-}
+
