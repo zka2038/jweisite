@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
-  <title id="title">Veil Study thumbnail</title>
-  <desc id="desc">A pale abstract thumbnail for Veil Study.</desc>
-  <rect width="800" height="450" fill="#f7f4ef"/>
-  <path d="M170 45c74 80 112 169 114 267 2 63-18 118-60 165" fill="none" stroke="#d8d1c6" stroke-width="24" stroke-linecap="round"/>
-  <path d="M355 35c66 92 100 191 102 296 1 69-20 126-64 171" fill="none" stroke="#c7beb2" stroke-width="16" stroke-linecap="round" opacity=".78"/>
-  <path d="M535 48c56 82 84 169 84 262 0 76-22 139-66 189" fill="none" stroke="#e4ded5" stroke-width="30" stroke-linecap="round"/>
-  <path d="M120 345c150-38 313-47 489-26" fill="none" stroke="#bdb5ab" stroke-width="2" opacity=".55"/>
-</svg>
