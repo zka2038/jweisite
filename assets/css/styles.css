@@ -402,6 +402,23 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   font-size: 1.15rem;
   line-height: 1.55;
 }
+.biography-page {
+  max-width: 86rem;
+}
+.biography-page .text-columns {
+  grid-template-columns: minmax(16rem, 20rem) minmax(0, 42rem);
+  gap: clamp(3rem, 6vw, 6rem);
+  justify-content: center;
+}
+.biography-page .portrait-card {
+  justify-self: start;
+}
+.biography-page .portrait-card img {
+  max-width: 15rem;
+}
+.biography-page section {
+  max-width: 42rem;
+}
 .portrait-card {
   border: none;
   padding: 0;
@@ -533,6 +550,188 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   text-align: center;
 }
 
+.site-footer {
+  padding: 2rem clamp(1rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 2200px) {
+  main {
+    padding-left: clamp(3.5rem, 6vw, 7rem);
+    padding-right: clamp(3.5rem, 6vw, 7rem);
+  }
+
+  .focus-feature {
+    grid-template-columns: minmax(0, 1.35fr) minmax(30rem, 40rem);
+    gap: clamp(4rem, 8vw, 10rem);
+  }
+
+  .hero > div {
+    max-width: 1300px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .focus-image {
+    width: min(100%, 40rem);
+    margin-right: 0;
+  }
+
+  .section-heading {
+    grid-template-columns: max-content minmax(0, 52rem);
+    gap: clamp(6rem, 12vw, 16rem);
+  }
+
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(1.6rem, 2.2vw, 2.8rem);
+  }
+
+  .text-page {
+    max-width: min(92vw, 148rem);
+  }
+
+  .text-columns {
+    grid-template-columns: minmax(18rem, 24rem) minmax(0, 64rem);
+    gap: clamp(4rem, 6vw, 7rem);
+  }
+
+  .text-columns p,
+  .exhibition-list p,
+  .artwork-copy p {
+    font-size: 1.28rem;
+    line-height: 1.72;
+  }
+  .portrait-card {
+    justify-self: auto;
+  }
+  .portrait-card img {
+    max-width: 22rem;
+    margin-left: 0rem;
+  }
+
+  .biography-page {
+    max-width: min(94vw, 140rem);
+  }
+
+  .biography-page .text-columns {
+    grid-template-columns: minmax(20rem, 26rem) minmax(0, 64rem);
+    gap: clamp(4rem, 6vw, 8rem);
+    width: fit-content;
+    margin-left: 6rem;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .biography-page .portrait-card img {
+    max-width: 24rem;
+  }
+
+  .biography-page section {
+    max-width: 64rem;
+  }
+
+  .exhibition-item {
+    grid-template-columns: 14rem 1fr;
+    gap: 3rem;
+  }
+
+  .artwork-layout {
+    grid-template-columns: minmax(0, 1.4fr) minmax(32rem, 1fr);
+    gap: clamp(4rem, 7vw, 8rem);
+  }
+
+  .artwork-copy h1 {
+    font-size: clamp(2.5rem, 3vw, 3.3rem);
+  }
+}
+
+
+
+@media (min-width: 1600px) {
+  main {
+    padding-left: clamp(2.5rem, 5vw, 5rem);
+    padding-right: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .focus-feature {
+    grid-template-columns: minmax(0, 1.2fr) minmax(24rem, 34rem);
+    gap: clamp(3rem, 7vw, 8rem);
+  }
+
+  .hero > div {
+    max-width: 1100px;
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+  }
+
+  .focus-image {
+    width: min(100%, 34rem);
+  }
+
+  .section-heading {
+    grid-template-columns: max-content minmax(0, 44rem);
+    gap: clamp(5rem, 12vw, 14rem);
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1.4rem, 2.4vw, 2.4rem);
+  }
+
+  .art-meta strong {
+    font-size: 1.5rem;
+  }
+
+  .text-page {
+    max-width: 100rem;
+  }
+
+  .text-columns {
+    grid-template-columns: minmax(16rem, 20rem) minmax(0, 50rem);
+    gap: clamp(3rem, 5vw, 6rem);
+  }
+
+  .text-columns p,
+  .exhibition-list p,
+  .artwork-copy p {
+    font-size: 1.22rem;
+    line-height: 1.65;
+  }
+
+  .portrait-card img {
+    max-width: 21rem;
+  }
+
+  .biography-page {
+    max-width: 108rem;
+  }
+
+  .biography-page .text-columns {
+    grid-template-columns: minmax(18rem, 24rem) minmax(0, 54rem);
+    gap: clamp(4rem, 6vw, 7rem);
+  }
+
+  .biography-page .portrait-card img {
+    max-width: 21rem;
+  }
+
+  .biography-page section {
+    max-width: 54rem;
+  }
+
+  .exhibition-item {
+    grid-template-columns: 12rem 1fr;
+    gap: 2.5rem;
+  }
+
+}
+
 @media (min-width: 851px) {
   .artwork-layout {
     align-items: stretch;
@@ -597,14 +796,16 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   }
 }
 
-.site-footer {
-  padding: 2rem clamp(1rem, 4vw, 3.5rem);
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+@media (min-width: 851px) {
+  .site-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-left: clamp(1rem, 4vw, 3.5rem);
+    padding-right: clamp(1rem, 4vw, 3.5rem);
+  }
 }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 900ms ease, transform 900ms ease; }
@@ -638,6 +839,20 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   .nav-links a { width: fit-content; }
   .nav-links.open { display: flex; }
   .hero, .text-columns, .artwork-layout { grid-template-columns: 1fr; }
+  .biography-page .text-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-content: initial;
+  }
+  .biography-page .portrait-card {
+    justify-self: center;
+  }
+  .biography-page .portrait-card img {
+    max-width: 15rem;
+  }
+  .biography-page section {
+    max-width: none;
+  }
   .focus-image {
     margin: 0 auto 4rem;
     width: min(100%, 26rem);
@@ -682,5 +897,18 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 
   .carousel-dots {
     bottom: 3.7rem;
+  }
+}
+@media (min-width: 834px) and (max-width: 1194px) and (orientation: landscape){
+  .biography-page .portrait-card {
+    margin-left: 2rem;
+  }
+
+  .biography-page .portrait-card img {
+    max-height: 24rem;
+  }
+
+  .biography-page .text-columns {
+    gap: clamp(2rem, 4vw, 5rem);
   }
 }
