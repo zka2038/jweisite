@@ -808,6 +808,25 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   }
 }
 
+.footer-link {
+  transition: opacity 220ms ease;
+}
+
+.footer-link-text {
+  text-decoration: underline;
+  text-decoration-color: rgba(66, 66, 66, 0.28);
+  text-underline-offset: 0.14em;
+  transition: text-decoration-color 220ms ease;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+}
+
+.footer-link:hover .footer-link-text {
+  text-decoration-color: rgba(66, 66, 66, 0.5);
+}
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 900ms ease, transform 900ms ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -877,7 +896,14 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
 
   .gallery-btn { font-size: 1.45rem; }
   .exhibition-item { grid-template-columns: 1fr; gap: 0.4rem; }
-  .site-footer { display: block; }
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    font-size: 0.92rem;
+  }
   .hero-art {
     aspect-ratio: 4 / 5;
   }
