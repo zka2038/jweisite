@@ -51,14 +51,22 @@
 
   <main class="text-page" style="padding-top: 3rem;">
     <article class="artwork-layout">
-      <div class="artwork-gallery video-gallery">
+      <div class="artwork-gallery nettrap-gallery">
         <div class="gallery-stage">
+          <button class="gallery-btn prev" type="button" aria-label="Previous image">&lsaquo;</button>
           <div class="gallery-frame">
-            <video class="gallery-media" controls playsinline preload="metadata" poster="../assets/images/thumbnails/NetTrapthumbnail.jpg">
-              <source src="../assets/images/full/NetTrap.mp4" type="video/mp4">
-            </video>
+            <div class="gallery-slide gallery-video-slide active">
+              <video class="gallery-media" controls playsinline preload="metadata" poster="../assets/images/thumbnails/NetTrapthumbnail.jpg">
+                <source src="../assets/images/full/NetTrap.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="gallery-slide">
+              <img src="../assets/images/full/NetTrap2.jpg" alt="Net Trap artwork detail">
+            </div>
           </div>
+          <button class="gallery-btn next" type="button" aria-label="Next image">&rsaquo;</button>
         </div>
+        <div class="gallery-counter" aria-live="polite">1/2</div>
       </div>
 
       <div class="artwork-copy reveal">
