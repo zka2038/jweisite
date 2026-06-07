@@ -459,7 +459,52 @@ h3 { font-size: clamp(1.1rem, 3vw, 2.4rem); }
   line-height: 1.02;
 }
 .artwork-details { margin: 1.3rem 0; padding: 0; list-style: none; color: var(--muted); border-top: 1px solid var(--line); }
-.artwork-details li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+.artwork-details li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 1rem;
+  align-items: start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.artwork-details li:not(.artwork-detail-block) > :last-child {
+  display: block;
+  justify-self: stretch;
+  width: 100%;
+  text-align: right;
+}
+
+.detail-dimensions {
+  display: block;
+  justify-self: stretch;
+  width: 100%;
+  text-align: right;
+  line-height: 1.45;
+}
+
+.artwork-details li.artwork-detail-block {
+  display: block;
+  grid-template-columns: none;
+  gap: 0;
+}
+
+.detail-block-label {
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.detail-block-copy {
+  gap: 0.35rem;
+  width: 100%;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.artwork-note {
+  margin-top: 1rem;
+  margin-left: 0;
+}
 
 
 .artwork-details a {
